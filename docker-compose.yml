@@ -1,0 +1,10 @@
+nodejs-whatsappBot:
+    image: node:14.1
+    container_name: nodejs-whatsappBot
+    # env_file:
+    #   - .env
+    restart: always
+    volumes:
+      - ./bot-app:/src/app
+      - /src/app/node_modules
+    command: bash -c "cd /src/app &&  npm i && node index.js"
