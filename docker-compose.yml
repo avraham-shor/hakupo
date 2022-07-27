@@ -7,4 +7,4 @@ nodejs-whatsappBot:
     volumes:
       - ./bot-app:/src/app
       - /src/app/node_modules
-    command: bash -c "cd /src/app &&  npm i && node index.js"
+    command: bash -c "cd /src/app && dir &&  npm i && node app.js"
