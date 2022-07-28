@@ -57,11 +57,25 @@ fs.readFile('data.txt', 'utf8', (err, data) => {
     return;
   }
   console.log(data);
-  console.log(data.split('\n'));
-  
+  let lines = data.split('\n');
+  lines = lines.map(line=> line.replace('\r', ''));
+  console.log(lines.slice(1));
+  const value = lines.slice(1);
+  obj[lines[0]] = value;
+//   delete obj.main;
+  console.log(obj);
 });
 
 
-function sort(str) {
-    return str.replace(' ','').split('').sort().join(''); 
-}
+function getTextWithLines(arr) {
+    arr.push('','','"ותחזירנו לשלום"','לא יוצאים מהבית לפני שתורמים לקופה','https://www.matara.pro/nedarimplus/online/?mosad=7002270');
+    let text = '';
+    arr.forEach(element => {
+        text += element + '\n'
+    });
+    return text;
+  }
+  
+  function sort(str) {
+    return str.replace('עילית','').replace(' ','').split('').sort().join(''); 
+  }

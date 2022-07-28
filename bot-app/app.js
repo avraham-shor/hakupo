@@ -36,7 +36,8 @@ client.on('message', (message) => {
 
     try {
         console.log(message.id.remote);
-        // console.log('author:', message.author);
+        console.log('name:', message.notifyName);
+        console.log(message.deviceType);
         // console.log('id:', message.id._serialized);
         
     } catch (error) {
